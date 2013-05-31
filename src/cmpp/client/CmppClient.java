@@ -1,6 +1,7 @@
 package cmpp.client;
 
 import java.net.InetSocketAddress;
+
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.service.IoConnector;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
@@ -37,7 +38,7 @@ public class CmppClient {
 		try {
 			// create tcp/ip connector
 			IoConnector connector = new NioSocketConnector();
-			// ´´½¨½ÓÊÜÊý¾ÝµÄ¹ýÂËÆ÷
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝµÄ¹ï¿½ï¿½ï¿½ï¿½ï¿½
 
 			connector.getFilterChain().addLast(
 					"codec",
@@ -46,8 +47,8 @@ public class CmppClient {
 			connector.setHandler(new cmpp.client.CmppClientIoHandler(LOCK));
 			// set connect timeout
 			connector.setConnectTimeoutMillis(30000);
-			// »òÕßconnector.setConnectTimeout(30);
-			// Á¬½Óµ½·þÎñÆ÷
+			// ï¿½ï¿½ï¿½ï¿½connector.setConnectTimeout(30);
+			// ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			ConnectFuture cf = connector.connect(new InetSocketAddress(
 					pu.getValue("CmppGw.server.ip"), Integer.parseInt(pu.getValue("CmppGw.server.port"))));
 

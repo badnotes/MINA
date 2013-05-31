@@ -1,6 +1,5 @@
 package cmpp.sms;
 
-import cmpp.sms.SmsException;
 
 
 public class TimeoutException extends SmsException {

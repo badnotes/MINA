@@ -1,8 +1,6 @@
 package socket;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 
 public class mothread  implements Runnable{
 	private BufferedReader in=null;

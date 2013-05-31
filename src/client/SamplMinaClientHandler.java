@@ -18,10 +18,9 @@ public class SamplMinaClientHandler extends IoHandlerAdapter implements
 	@Override
 	public void messageReceived(IoSession session, Object message)
 			throws Exception {
-		// 我们已经设定了服务器的解析消息，（规则是一行一行的读取。这里就可以转为String）
 		String s = (String) message;
 		// write the receive date back to remote peer
-		System.out.println("服务器发来的收到信息" + s);
+		System.out.println("echo:" + s);
 		session.write(s);
 	}
 
@@ -54,7 +53,7 @@ public class SamplMinaClientHandler extends IoHandlerAdapter implements
 	public void sessionOpened(IoSession session) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("incomming client" + session.getRemoteAddress());
-		session.write("我来啦...");
+		session.write("hi...");
 	}
 
 }

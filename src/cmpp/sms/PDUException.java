@@ -1,6 +1,5 @@
 package cmpp.sms;
 
-import cmpp.sms.SmsException;
 
 
 public class PDUException extends SmsException {

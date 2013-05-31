@@ -6,8 +6,6 @@
  */
 package cmpp.pdu;
 
-import java.io.IOException;
-import java.io.Serializable;
 import java.security.MessageDigest;
 import java.text.Format;
 import java.text.SimpleDateFormat;

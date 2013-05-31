@@ -1,5 +1,7 @@
 package cmpp.pdu;
 
+import cmpp.sms.PDU;
+
 
 
 public abstract class Response extends CmppPDU {

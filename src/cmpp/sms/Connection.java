@@ -3,8 +3,6 @@ package cmpp.sms;
 import java.io.IOException;
 import java.net.Socket;
 
-import cmpp.sms.SmsObject;
-
 
 public abstract class Connection extends SmsObject {
 	

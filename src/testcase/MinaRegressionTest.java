@@ -1,5 +1,13 @@
 package testcase;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.future.IoFutureListener;
@@ -14,14 +22,6 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * TODO : Add documentation
@@ -97,7 +97,7 @@ public class MinaRegressionTest extends IoHandlerAdapter {
 //					wb.put(new byte[MSG_SIZE]);
 					Charset ch=Charset.forName("utf-8");
 					CharsetEncoder encoder = ch.newEncoder();
-					String cs ="²âÊÔ" +future.getSession().getId() ;
+					String cs ="ï¿½ï¿½ï¿½ï¿½" +future.getSession().getId() ;
 					wb.putString(cs,encoder);
 					wb.flip();
 					s.write(wb);

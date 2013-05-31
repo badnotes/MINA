@@ -2,8 +2,6 @@ package cmpp.sms;
 
 import java.io.UnsupportedEncodingException;
 
-import cmpp.sms.SmsObject;
-
 
 public class ByteBuffer extends SmsObject {
 

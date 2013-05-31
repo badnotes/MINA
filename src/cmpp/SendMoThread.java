@@ -3,6 +3,7 @@ package cmpp;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import cmpp.sms.ShortMessage;
 
 public class SendMoThread implements Runnable {
@@ -47,7 +48,7 @@ public class SendMoThread implements Runnable {
 		delive.setDstId("1016");
 		delive.setIsReport((byte) 0);
 		ShortMessage sm = new ShortMessage();
-		String msg = "hi,²âÊÔmo:" + i++;
+		String msg = "hi,ï¿½ï¿½ï¿½ï¿½mo:" + i++;
 		sm.setMessage(msg.getBytes(), (byte) 15);
 		delive.setSm(sm);
 		delive.setLinkId("12345678901234567890");

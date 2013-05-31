@@ -1,32 +1,23 @@
 package cmpp;
 
-import org.apache.mina.core.buffer.IoBuffer;
-import org.apache.mina.core.service.IoHandlerAdapter;
-import org.apache.mina.core.session.IoSession;
-import org.apache.mina.integration.jmx.IoSessionMBean;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import cmpp.CmppConstant;
-
-import cmpp.ActiveThread;
-import cmpp.pdu.CmppPDU;
-import cmpp.sms.ByteBuffer;
-import cmpp.sms.ShortMessage;
 import static cmpp.MinaCmpp.MSG_COUNT;
 import static cmpp.MinaCmpp.OPEN;
 
 import java.io.IOException;
-import java.lang.management.ManagementFactory;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.management.MBeanServer;
-import javax.management.ObjectName;
+import org.apache.mina.core.service.IoHandlerAdapter;
+import org.apache.mina.core.session.IoSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import cmpp.pdu.CmppPDU;
+import cmpp.sms.ByteBuffer;
+import cmpp.sms.ShortMessage;
 
 /**
  * TODO: Document me !
@@ -61,7 +52,7 @@ public class CmppIoHandler extends IoHandlerAdapter {
 	public void sessionOpened(IoSession session) throws Exception {
 		logger.info("Session " + session.getId() + " is opened");
 
-		// Æô¶¯ActivePDU-Thread
+		// ï¿½ï¿½ï¿½ï¿½ActivePDU-Thread
 		// ExecutorService exec = Executors.newSingleThreadExecutor();
 		// exec.execute(new ActiveThread(session));
 		Thread t = new Thread(new ActiveThread(session));
@@ -140,7 +131,7 @@ public class CmppIoHandler extends IoHandlerAdapter {
 				session.write(subresp);
 				logger.info("subresp:" + pdu.header.getSequenceNumber()
 						+ " on session " + session.getId());
-				// ·¢ËÍ×´Ì¬±¨¸æ
+				// ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½
 				cmpp.pdu.Deliver deliver = sendMsgStat(submit);
 				session.write(deliver);
 				break;

@@ -1,24 +1,22 @@
 package cmpp.client;
 
-import org.apache.mina.core.service.IoHandlerAdapter;
-import org.apache.mina.core.session.IoSession;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import cmpp.CmppConstant;
-
-import cmpp.pdu.CmppPDU;
-import cmpp.sms.ByteBuffer;
-import cmpp.sms.StrUtil;
 import static cmpp.MinaCmpp.MSG_COUNT;
 import static cmpp.MinaCmpp.OPEN;
 
 import java.io.IOException;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import org.apache.mina.core.service.IoHandlerAdapter;
+import org.apache.mina.core.session.IoSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import cmpp.CmppConstant;
+import cmpp.pdu.CmppPDU;
+import cmpp.sms.ByteBuffer;
+import cmpp.sms.StrUtil;
 
 /**
  * TODO: Document me !
@@ -52,9 +50,9 @@ public class CmppClientIoHandler extends IoHandlerAdapter {
 	@Override
 	public void sessionOpened(IoSession session) throws Exception {
 		logger.info("Session " + session.getId() + " is opened");
-		// Á¬½Ó
+		// ï¿½ï¿½ï¿½ï¿½
 		Connect(session);
-		// Æô¶¯ActivePDU-Thread
+		// ï¿½ï¿½ï¿½ï¿½ActivePDU-Thread
 //		ExecutorService exec = Executors.newSingleThreadExecutor();
 //		exec.execute(new ActiveThread(session));
 		Thread t = new Thread(new ActiveThread(session));
@@ -129,7 +127,7 @@ public class CmppClientIoHandler extends IoHandlerAdapter {
 //					s.setDaemon(true);
 //					s.start();			
 //					exec.execute(new MsgSendThread(session));
-					//Æô¶¯·¢ËÍÏß³Ì
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½
 				} else {
 					Connect = false;
 					session.close(true);
@@ -164,9 +162,9 @@ public class CmppClientIoHandler extends IoHandlerAdapter {
 				logger.info(cmppDeliver.getSm().getMessage());
 				session.write(cmppDeliverResp);
 
-				if (cmppDeliver.getIsReport() == 0) { // ¶ÌÐÅ
+				if (cmppDeliver.getIsReport() == 0) { // ï¿½ï¿½ï¿½ï¿½
 					logger.info("sms_mo");
-				} else {// ×´Ì¬±¨¸æ
+				} else {// ×´Ì¬ï¿½ï¿½ï¿½ï¿½
 					logger.info("sms_stat");
 					ByteBuffer buffer = cmppDeliver.getSm().getData();
 					try {

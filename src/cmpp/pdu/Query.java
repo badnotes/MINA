@@ -8,9 +8,9 @@ package cmpp.pdu;
 
 
 import cmpp.CmppConstant;
-import cmpp.sms.PDUException;
 import cmpp.sms.ByteBuffer;
 import cmpp.sms.NotEnoughDataInByteBufferException;
+import cmpp.sms.PDUException;
 
 
 /**

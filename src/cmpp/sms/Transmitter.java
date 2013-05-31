@@ -2,8 +2,6 @@ package cmpp.sms;
 
 import java.io.IOException;
 
-import cmpp.sms.SmsObject;
-
 
 public class Transmitter extends SmsObject {
 

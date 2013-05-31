@@ -3,8 +3,6 @@ package cmpp.sms;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-import cmpp.sms.SmsObject;
-
 
 public class Queue extends SmsObject {
 	private int maxQueueSize = 0;

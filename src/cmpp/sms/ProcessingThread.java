@@ -1,7 +1,6 @@
 package cmpp.sms;
 
 
-import cmpp.sms.SmsObject;
 
 
 public abstract class ProcessingThread extends SmsObject implements Runnable {

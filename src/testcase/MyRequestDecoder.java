@@ -1,16 +1,13 @@
 package testcase;
 
+import static testcase.MinaRegressionTest.OPEN;
+
 import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.CumulativeProtocolDecoder;
 import org.apache.mina.filter.codec.ProtocolDecoderOutput;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
-
-import static testcase.MinaRegressionTest.MSG_SIZE;
-import static testcase.MinaRegressionTest.OPEN;
 
 /**
  * TODO: Document me !
